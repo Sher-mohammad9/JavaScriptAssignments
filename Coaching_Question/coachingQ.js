@@ -12,13 +12,10 @@
 
 
 let num = 85;
-if(num % 2 != 0 && num % 7 === 0){
-           num += 15
-		if(num == 120){
+if(num % 2 != 0 && num % 7 === 0 && num+15 == 120){
 			let date = new Date()
-			let mintus = date.getMinutes()+num
+			let mintus = date.setMinutes(d.getMinutes + num)
 			console.log(mintus)
-		}
 }else{
        console.log(Date.UTC(num))
 }
@@ -33,23 +30,24 @@ if(num % 2 != 0 && num % 7 === 0){
 
 let num1 = 30;
 let num2 = 100
+//Using if else
 if(num1 % 2 === 0){
 	console.log(num2)
 }else{
 	console.log(num1)
 }
 
+//Using ternary operator
 num1 % 2 === 0 ? console.log(num2) : console.log(num);
 
-num1 % 2 != 0 || hunderd(num1)
-
-function hunderd(num1){
-	if(num1 % 2 === 0){
+//Using Short Circuting
+let n = num1 % 2 === 0 || num1
+if(n === num1){
 	console.log(num2)
 }else{
 	console.log(num1)
 }
-}
+
 
 
 //Q3 value leni hai country population
@@ -93,7 +91,6 @@ switch(desigain){
 
 let str = "my mame is sajid ali khan. zahid bhai jyada bolte hain. Inko chup krana pdega"
 let arr = str.split(" ")
-let arr1 = []; 
 
 for(let i=0; i < arr.length; i++){
 	if(arr[i].toLowerCase() == "sajid"){
@@ -103,10 +100,7 @@ for(let i=0; i < arr.length; i++){
 	}else if(arr[i].toLowerCase() == "chup"){
 		arr.splice(i,1,"silent")
 	}
-}
-
-for(let val of arr){
-	arr1.push(val.substring(0,1).toUpperCase().concat(val.slice(1)))
+		arr.push(arr[i].substring(0,1).toUpperCase().concat(arr[i].slice(1)))
 }
 console.log(arr1.join(" "))
 
@@ -156,18 +150,17 @@ for(let i=2; i<=5; i++){
     // answer =  65
 
 let arr2 = [1,2,3,4,5,6,7];
-let sum = 0;
-let ave = 0;
-let arr3 = arr2.forEach(function(val){
-	let arr =  val * 10;
-	if(50 < arr){
-       ave += arr;
-	}else{
-		sum += arr
-	}
+let average=0;
+let arr3 = arr2.map(function(val){
+	return val * 10;
+}).filter(function(val){
+	return val > 50;
+}).reduce(function(total, val){
+	average++;
+	return total + val;
 })
-console.log(sum)
-console.log(ave/2)
+console.log(arr3/average)
+
 
 // Q8  DOM 
 
@@ -263,27 +256,22 @@ console.log(myName,mobile,pincode)
 
 let arr4 = [1,2,3,4,1,2,3,1,2,3,1,5,6,7,4];
 let map = new Map();
-let m = new Map();
-let rep;
-let mm = 0;
-let max = 0;
-for(let val of arr4){
-	rep = map.get(val);
-	if(rep){
-		map.set(val,rep+1)
+let num = 0;
+let max = 1;
+for(let key of arr4){
+  let value = map.get(key);
+	if(value){
+		let newValue = value+1
+		map.set(key,newValue)
+	 if(newValue > max){
+         max = newValue
+         num = key
+	 }	
 	}else{
-		map.set(val,1)
+		map.set(value,1)
 	}
 }
-console.log(map)
-let k = 0;
-map.forEach(function(val,key){
-	if(val > max){
-	   max = val
-	   k = key
-	}
-})
-console.log(`Number ${k} total ${max} bar repeat hoa hai`)
+console.log(`Number ${num} total ${max} bar repeat hoa hai`)
 
 
 
