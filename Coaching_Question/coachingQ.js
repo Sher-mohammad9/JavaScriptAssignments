@@ -197,11 +197,11 @@ function start(){
     setInterval(function(){
     if(desi){
 	second.textContent = sec;
+	sec -= 1;
 	if(sec == 0){
 		alert("Game over")
 		desi = false;
 	}
-	sec -= 1;
 }
 },1000)
 }
