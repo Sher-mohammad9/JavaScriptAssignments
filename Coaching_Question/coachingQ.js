@@ -278,3 +278,4 @@ console.log(`Number ${num} total ${max} bar repeat hoa hai`)
 
 
 
+
