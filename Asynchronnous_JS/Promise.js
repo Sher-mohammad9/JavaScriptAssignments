@@ -1,32 +1,37 @@
 "use strict"
 
-// let promise1 = new Promise(function(onefn,twofn){
-// 	let num = 1;
-// 	if(num == 1){
-// 		onefn(num);
-// 	}else{
-// 		twofn(num)
-// 	}
-// })
+// Create promise ()
 
-// console.log(promise1.then)
-// promise1.then(function(val){
-// 	// console.log(val)
-// 	return 
-// }, 
-// function(val){
-// console.log(val)
-// })
+let promise1 = new Promise(function(onefn,twofn){
+	let num = 1;
+	if(num == 1){
+		onefn(num);
+	}else{
+		twofn(num)
+	}
+})
 
-// let promise2 = fetch("https://restcountries.com/v2/name/japan");
+console.log(promise1.then)
+promise1.then(function(val){
+	// console.log(val)
+	return 
+}, 
+function(val){
+console.log(val)
+})
 
-// console.log(promise2)
-// let i = 20
-// promise2.then((response) => response.json(),(reject) =>{ console.log(reject, i)})
-// .then((secusse) => { console.log(secusse)},(failure) => console.log(failure + "helo"))
-// // .then((complite) => complite.json(),(error) => console.log(error))
-// // .then((setteld) => console.log(setteld)).catch((e)=> console.log(e + " fdff"))
+// Create Fetch()
+let promise2 = fetch("https://restcountries.com/v2/name/japan");
 
+console.log(promise2)
+let i = 20
+promise2.then((response) => response.json(),(reject) =>{ console.log(reject, i)})
+.then((secusse) => { console.log(secusse)},(failure) => console.log(failure + "helo"))
+.then((complite) => complite.json(),(error) => console.log(error))
+.then((setteld) => console.log(setteld)).catch((e)=> console.log(e + " fdff"))
+
+
+// Promise With XMLHttpRequest object
 let prom = new Promise(function(secusse,reject){
 
 	let xMLH = new XMLHttpRequest();
@@ -55,6 +60,8 @@ prom.then(function(resolve){
 	console.log(e)
 })
 
+
+// Fetch return promis
 let res = fetch("https://restcountries.com/v2/name/japan");
 console.log(res);
 res
