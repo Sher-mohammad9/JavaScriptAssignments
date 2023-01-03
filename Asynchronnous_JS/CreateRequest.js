@@ -21,7 +21,7 @@ infoCountry.send();
 
 infoCountry.addEventListener("load",function(){
     let country = JSON.parse(this.responseText);
-    
+    console.log(country)
     if(country.status == 404){
     	  document.getElementById("error").innerHTML = "This  is a not country"	
 }else{
