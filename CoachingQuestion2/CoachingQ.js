@@ -2,17 +2,17 @@
 
 // Q1. Count print krna hai from 1 to 100 using closure function
 
-// function add() {
-//   let counter = 1;
-//   function plus() {
-//   	console.log(counter)
-//   	counter++
-//   }
-//   for(let i=1; i<=100; i++){
-//   	     plus();
-//   }
-// }
-// add();
+function add() {
+  let counter = 1;
+  function plus() {
+  	console.log(counter)
+  	counter++
+  }
+  for(let i=1; i<=100; i++){
+  	     plus();
+  }
+}
+add();
 
 /* 
 
@@ -116,34 +116,34 @@ like Samosa, Chai, Cold Drink etc.
 
 */
 
-//     let playerName=[];
-//     let howMochPlayer = Number(prompt("How moch play the macth?"))
-// for(let i=1; i<=howMochPlayer; i++){
-//     playerName.push(prompt("Enter player name " + i))
-// }
-//     let arr = ["2 / 2","2 + 2","2 * 2"]
-//     let map = new Map();
-//     map.set(arr[0], 1).set(arr[1], 4).set(arr[2], 4);
-//     let party = ["Samosa","Chai","Cold Drink"]
-//     let desi = true;
-// while(desi){
-//     let random = Math.trunc(Math.random()*playerName.length);
-//     for(let i=1; i<=3; i++){
-//     let quesRnd = Math.trunc(Math.random()* arr.length);   
-//     let play = Number(prompt(`${playerName[random]} how much is ${arr[quesRnd]} ?`));
-//     let ans = map.get(arr[quesRnd])
-//     if(play === ans){
-//        if(i == 3){
-//           console.log(`Congratulation you have pass`)
-//        } 
-//         continue; 
-//     }else{
-//         console.log(`${playerName[random]} you have failed now party ${party[random]}`)
-//         desi = false;
-//         break;
-//     }
-//     }
-// }
+    let playerName=[];
+    let howMochPlayer = Number(prompt("How moch play the macth?"))
+for(let i=1; i<=howMochPlayer; i++){
+    playerName.push(prompt("Enter player name " + i))
+}
+    let arr = ["2 / 2","2 + 2","2 * 2"]
+    let map = new Map();
+    map.set(arr[0], 1).set(arr[1], 4).set(arr[2], 4);
+    let party = ["Samosa","Chai","Cold Drink"]
+    let desi = true;
+while(desi){
+    let random = Math.trunc(Math.random()*playerName.length);
+    for(let i=1; i<=3; i++){
+    let quesRnd = Math.trunc(Math.random()* arr.length);   
+    let play = Number(prompt(`${playerName[random]} how much is ${arr[quesRnd]} ?`));
+    let ans = map.get(arr[quesRnd])
+    if(play === ans){
+       if(i == 3){
+          console.log(`Congratulation you have pass`)
+       } 
+        continue; 
+    }else{
+        console.log(`${playerName[random]} you have failed now party ${party[random]}`)
+        desi = false;
+        break;
+    }
+    }
+}
     
    
 //Q9 
