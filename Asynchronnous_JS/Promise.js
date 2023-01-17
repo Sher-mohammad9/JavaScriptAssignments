@@ -1,6 +1,6 @@
-"use strict"
+  "use strict"
 
-// Create promise ()
+Create promise ()
 
 let promise1 = new Promise(function(onefn,twofn){
 	let num = 1;
@@ -26,8 +26,8 @@ let promise2 = fetch("https://restcountries.com/v2/name/japan");
 console.log(promise2)
 let i = 20
 promise2.then((response) => response.json(),(reject) =>{ console.log(reject, i)})
-.then((secusse) => { console.log(secusse)},(failure) => console.log(failure + "helo"))
-.then((complite) => complite.json(),(error) => console.log(error))
+.then((secusse) => secusse,(failure) => console.log(failure + "helo"))
+.then((complite) => complite,(error) => console.log(error))
 .then((setteld) => console.log(setteld)).catch((e)=> console.log(e + " fdff"))
 
 
@@ -46,7 +46,6 @@ let btn = document.getElementById("btn");
 		reject()
 	}
 	})
-
 })
 
 prom.then(function(resolve){
@@ -69,11 +68,11 @@ res
     setTimeout(function () {
       console.log(resolve);
     }, 1000);
-      return resolve;
+      return resolve.json();
   })
   .then(function (secusse) {
-  	let t = 20;
-  	t.toLowerCase();
+  	// let t = 20;
+  	// t.toLowerCase();
     setTimeout(function () {
       console.log(secusse);
     }, 1000);
@@ -88,3 +87,13 @@ res
   	console.log(e)
   })
 
+let p = Promise.allSettled([fetch("https://restcountries.com/v2/name/japan"),
+                 fetch("https://restcountries.com/v2/name/nepal"),
+                 fetch("https://restcountries.com/v2/name/china"),
+                 fetch("https://restcountries.com/v2/name/bhutan"),])
+
+p.then((re)=>{
+   console.log(re)
+},(rej)=>{
+   console.log(rej)
+})
